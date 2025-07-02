@@ -1,0 +1,32 @@
+2025-06-30 10:38:49,019 - INFO - YOLO Validation : 日志记录器已启动，日志文件保存在: D:\BTD\yoloservice\logs\dataset_verify\dataset_verify__20250630-103849.log
+2025-06-30 10:38:49,019 - INFO - YOLO Validation : 日志记录器的根目录: D:\BTD\yoloservice\logs
+2025-06-30 10:38:49,020 - INFO - YOLO Validation : 日志记录器的名称: YOLO Validation
+2025-06-30 10:38:49,020 - INFO - YOLO Validation : 日志记录器的类型: dataset_verify
+2025-06-30 10:38:49,020 - INFO - YOLO Validation : 日志记录器的级别: INFO
+2025-06-30 10:38:49,020 - INFO - YOLO Validation : =========================日志记录器初始化成功=========================
+2025-06-30 10:38:49,023 - INFO - YOLO Validation : 开始验证数据集，模式为: SAMPLE, 任务类型: detection, 删除非法数据: 否
+2025-06-30 10:38:49,023 - INFO - YOLO Validation : 验证data.yaml文件配置,配置文件路径为：D:\BTD\yoloservice\configs\data.yaml
+2025-06-30 10:38:49,023 - INFO - YOLO Validation : 当前验证任务类型为: DETECTION
+2025-06-30 10:38:49,024 - INFO - YOLO Validation : 数据集类别数量与配置文件一致，类别数量为：3，类别为：['glioma_tumor', 'meningioma_tumor', 'pituitary_tumor']
+2025-06-30 10:38:49,024 - INFO - YOLO Validation : 验证 train 路径为: D:\BTD\yoloservice\data\train\images
+2025-06-30 10:38:49,031 - INFO - YOLO Validation : 图像目录D:\BTD\yoloservice\data\train\images 存在680张图像
+2025-06-30 10:38:49,031 - INFO - YOLO Validation : train 验证模式为SAMPLE，将随机抽取68张图像进行验证
+2025-06-30 10:38:49,052 - INFO - YOLO Validation : 验证 val 路径为: D:\BTD\yoloservice\data\val\images
+2025-06-30 10:38:49,052 - INFO - YOLO Validation : 图像目录D:\BTD\yoloservice\data\val\images 存在37张图像
+2025-06-30 10:38:49,053 - INFO - YOLO Validation : val 验证模式为SAMPLE，将随机抽取10张图像进行验证
+2025-06-30 10:38:49,056 - INFO - YOLO Validation : 验证 test 路径为: D:\BTD\yoloservice\data\test\images
+2025-06-30 10:38:49,056 - INFO - YOLO Validation : 图像目录D:\BTD\yoloservice\data\test\images 存在39张图像
+2025-06-30 10:38:49,056 - INFO - YOLO Validation : test 验证模式为SAMPLE，将随机抽取10张图像进行验证
+2025-06-30 10:38:49,060 - INFO - YOLO Validation : 基础数据集结构和标签内容验证通过！
+2025-06-30 10:38:49,060 - INFO - YOLO Validation : 基础数据集验证完成：通过
+2025-06-30 10:38:49,060 - INFO - YOLO Validation : 开始执行分割唯一性验证
+2025-06-30 10:38:49,060 - INFO - YOLO Validation : 开始验证数据集划分的唯一性（train, val, test 之间无重复图像）。
+2025-06-30 10:38:49,068 - INFO - YOLO Validation : 'train' 分割包含 680 张独立图像。
+2025-06-30 10:38:49,069 - INFO - YOLO Validation : 'val' 分割包含 37 张独立图像。
+2025-06-30 10:38:49,069 - INFO - YOLO Validation : 'test' 分割包含 39 张独立图像。
+2025-06-30 10:38:49,069 - INFO - YOLO Validation : 训练集和验证集之间没有重复图像。
+2025-06-30 10:38:49,069 - INFO - YOLO Validation : 训练集和测试集之间没有重复图像。
+2025-06-30 10:38:49,071 - INFO - YOLO Validation : 验证集和测试集之间没有重复图像。
+2025-06-30 10:38:49,071 - INFO - YOLO Validation : 数据集分割唯一性验证通过：各子集之间没有发现重复图像。
+2025-06-30 10:38:49,071 - INFO - YOLO Validation : 分割唯一性验证完成：通过
+2025-06-30 10:38:49,071 - INFO - YOLO Validation : 数据集验证完成：全部通过

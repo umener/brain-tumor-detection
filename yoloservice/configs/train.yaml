@@ -1,0 +1,138 @@
+# === YOLOv8 安全帽检测核心训练配置 ===
+# 注：带(*)参数为高频调整项
+# 参数参考: https://docs.ultralytics.com/zh/modes/train/#train-settings
+# 可手动修改参数,或通过命令行进行覆盖如 (--epochs 10) 
+
+# --- 核心参数 (优先设置) ---
+# (*)数据集配置文件路径 (YAML格式，需定义train/val路径和类别)
+data: data.yaml
+# (*)训练总轮次 (安全帽检测建议50-300轮)
+epochs: 2
+# (*)批量大小 (GPU显存<8G建议8-16，>8G可32-64)
+batch: 16
+# (*)输入图像尺寸 (安全帽小目标建议>=640)
+imgsz: 640
+# (*)训练设备 (自动选择GPU/CPU，多GPU可用'0,1')
+device: '0'
+# 是否保存模型和检查点 (True推荐生产环境)
+save: True
+
+# --- 训练增强与优化 ---
+# (*)马赛克增强概率 (小目标检测建议0.75-1.0)
+mosaic: 1.0
+# (*)水平翻转概率 (安全帽检测推荐0.3-0.7)
+fliplr: 0.5
+# 垂直翻转概率 (安全帽建议禁用=0)
+flipud: 0.0
+# (*)学习率预热轮次 (通常3-5轮)
+warmup_epochs: 3.0
+
+# --- 必要但较少调整的参数 ---
+# 数据加载线程数 (建议设为CPU核心数的50-75%)
+workers: 8
+# 早停耐心值 (验证指标无改善的轮次数)
+patience: 100
+# 是否使用混合精度训练(AMP) (True可加速训练)
+amp: True
+# 优化器选择 (SGD/Adam/AdamW/RMSProp等)
+optimizer: 'AdamW'
+
+# --- 完整参数列表 (按字母排序) ---
+# 自动增强策略 (仅分类任务有效)
+auto_augment: randaugment
+# BGR通道翻转概率
+bgr: 0.0
+# 边界框损失权重
+box: 7.5
+# 数据缓存方式 (False/ram/disk)
+cache: False
+# 分类损失权重
+cls: 0.5
+# 关闭马赛克的轮次 (最后N轮)
+close_mosaic: 10
+# 是否使用余弦学习率调度
+cos_lr: False
+# 复制粘贴增强概率
+copy_paste: 0.0
+# 复制粘贴模式
+copy_paste_mode: 'flip'
+# CutMix增强概率
+cutmix: 0.0
+# 旋转角度范围(度)
+degrees: 0.0
+# 确定性模式 (影响可复现性)
+deterministic: True
+# DFL损失权重
+dfl: 1.5
+# 随机丢弃率
+dropout: 0.0
+# 是否允许覆盖现有目录
+exist_ok: False
+# 使用数据集的比例
+fraction: 1.0
+# 冻结网络层数
+freeze: None
+# 色相增强幅度
+hsv_h: 0.015
+# 饱和度增强幅度
+hsv_s: 0.7
+# 明度增强幅度
+hsv_v: 0.4
+# 关键点对象性损失权重
+kobj: 1.0
+# 初始学习率
+lr0: 0.001
+# 最终学习率比例
+lrf: 0.01
+# 掩码下采样率
+mask_ratio: 4
+# MixUp增强概率
+mixup: 0.0
+# 动量参数
+momentum: 0.937
+# 多尺度训练
+multi_scale: False
+# 标称批量大小
+nbs: 64
+# 训练运行名称
+name: 'train'
+# 掩码重叠处理
+overlap_mask: True
+# 透视变换幅度
+perspective: 0.0
+# 是否生成训练曲线
+plots: True
+# 姿态损失权重
+pose: 12.0
+# 性能分析模式
+profile: False
+# 项目保存目录
+project: 'D:\BTD\yoloservice\runs\detect'
+# 是否使用预训练权重
+pretrained: True
+# 矩形训练
+rect: False
+# 是否恢复训练
+resume: False
+# 检查点保存间隔
+save_period: -1
+# 缩放比例
+scale: 0.5
+# 随机种子
+seed: 0
+# 剪切角度
+shear: 0.0
+# 单类别模式
+single_cls: False
+# 最大训练时长(小时)
+time: null
+# 平移比例
+translate: 0.1
+# 是否进行验证
+val: True
+# 预热偏置学习率
+warmup_bias_lr: 0.1
+# 预热动量
+warmup_momentum: 0.8
+# 权重衰减
+weight_decay: 0.0005

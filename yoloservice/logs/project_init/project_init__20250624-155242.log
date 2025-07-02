@@ -1,0 +1,24 @@
+2025-06-24 15:52:42,111 - INFO - YOLO Project Initializer : 日志记录器已启动，日志文件保存在: D:\BTD\yoloservice\logs\project_init\project_init__20250624-155242.log
+2025-06-24 15:52:42,113 - INFO - YOLO Project Initializer : 日志记录器的名称: YOLO Project Initializer
+2025-06-24 15:52:42,113 - INFO - YOLO Project Initializer : 日志记录器的类型: project_init
+2025-06-24 15:52:42,113 - INFO - YOLO Project Initializer : 日志记录器的级别: INFO
+2025-06-24 15:52:42,113 - INFO - YOLO Project Initializer : =========================日志记录器初始化成功=========================
+2025-06-24 15:52:42,113 - INFO - YOLO Project Initializer : ==========================开始初始化项目===========================
+2025-06-24 15:52:42,113 - INFO - YOLO Project Initializer : 项目根目录: D:\BTD\yoloservice
+2025-06-24 15:52:42,113 - INFO - YOLO Project Initializer : =========================验证核心项目目录结构=========================
+2025-06-24 15:52:42,113 - INFO - YOLO Project Initializer : 目录已存在: data\train\images
+2025-06-24 15:52:42,113 - INFO - YOLO Project Initializer : 目录已存在: data\train\labels
+2025-06-24 15:52:42,113 - INFO - YOLO Project Initializer : 目录已存在: data\val\images
+2025-06-24 15:52:42,113 - INFO - YOLO Project Initializer : 目录已存在: data\val\labels
+2025-06-24 15:52:42,113 - INFO - YOLO Project Initializer : 目录已存在: data\test\images
+2025-06-24 15:52:42,113 - INFO - YOLO Project Initializer : 目录已存在: data\test\labels
+2025-06-24 15:52:42,113 - INFO - YOLO Project Initializer : =========================验证原始数据集目录==========================
+2025-06-24 15:52:42,121 - INFO - YOLO Project Initializer : 原始图像目录验证通过: D:\BTD\yoloservice\data\raw\images (880个文件)
+2025-06-24 15:52:42,121 - INFO - YOLO Project Initializer : 原始标注目录验证通过: D:\BTD\yoloservice\data\raw\original_annotations (3个文件)
+2025-06-24 15:52:42,121 - INFO - YOLO Project Initializer : ==========================项目初始化摘要===========================
+2025-06-24 15:52:42,121 - INFO - YOLO Project Initializer : 创建了 0 个新目录
+2025-06-24 15:52:42,122 - INFO - YOLO Project Initializer : 验证了 6 个现有目录
+2025-06-24 15:52:42,122 - INFO - YOLO Project Initializer : -------------------------原始数据目录状态:--------------------------
+2025-06-24 15:52:42,123 - INFO - YOLO Project Initializer :   • data\raw\images: 存在且有数据 (880个文件)
+2025-06-24 15:52:42,123 - INFO - YOLO Project Initializer :   • data\raw\original_annotations: 存在且有数据 (3个文件)
+2025-06-24 15:52:42,123 - INFO - YOLO Project Initializer : ==========================项目初始化完成===========================

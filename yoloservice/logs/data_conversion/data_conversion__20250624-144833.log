@@ -1,0 +1,29 @@
+2025-06-24 14:48:33,423 - INFO - COCO2YOLO Converter : 日志记录器已启动，日志文件保存在: D:\BTD\yoloservice\logs\data_conversion\data_conversion__20250624-144833.log
+2025-06-24 14:48:33,423 - INFO - COCO2YOLO Converter : 日志记录器的名称: COCO2YOLO Converter
+2025-06-24 14:48:33,423 - INFO - COCO2YOLO Converter : 日志记录器的类型: data_conversion
+2025-06-24 14:48:33,423 - INFO - COCO2YOLO Converter : 日志记录器的级别: INFO
+2025-06-24 14:48:33,423 - INFO - COCO2YOLO Converter : =========================日志记录器初始化成功=========================
+2025-06-24 14:48:33,423 - INFO - COCO2YOLO Converter : ==================================================
+2025-06-24 14:48:33,423 - INFO - COCO2YOLO Converter : 开始 COCO 到 YOLO 格式转换 (使用 ultralytics 内置转换器)
+2025-06-24 14:48:33,423 - INFO - COCO2YOLO Converter : 输入目录: D:\BTD\yoloservice\data\raw\original_annotations
+2025-06-24 14:48:33,423 - INFO - COCO2YOLO Converter : 输出目录: D:\BTD\yoloservice\data\raw\yolo_staged_labels
+2025-06-24 14:48:33,423 - INFO - COCO2YOLO Converter : 步骤1: 初始化与输入校验
+2025-06-24 14:48:33,423 - INFO - COCO2YOLO Converter : 找到 3 个 JSON 文件: ['_annotations.coco.json', '_annotations.coco_0.json', '_annotations.coco_1.json']
+2025-06-24 14:48:33,439 - INFO - COCO2YOLO Converter : 验证通过: _annotations.coco.json
+2025-06-24 14:48:33,443 - INFO - COCO2YOLO Converter : 验证通过: _annotations.coco_0.json
+2025-06-24 14:48:33,443 - INFO - COCO2YOLO Converter : 验证通过: _annotations.coco_1.json
+2025-06-24 14:48:33,443 - INFO - COCO2YOLO Converter : 步骤2: COCO 类别一致性检查
+2025-06-24 14:48:33,449 - INFO - COCO2YOLO Converter : 所有文件中包含 4 个一致的类别
+2025-06-24 14:48:33,449 - INFO - COCO2YOLO Converter : 步骤3: 执行核心转换功能
+2025-06-24 14:48:35,576 - INFO - COCO2YOLO Converter : 创建临时工作目录: D:\BTD\yoloservice\data\raw\temp\coco2yolo_temp_20250624_144835
+2025-06-24 14:48:35,576 - INFO - COCO2YOLO Converter : 转换: _annotations.coco.json -> D:\BTD\yoloservice\data\raw\temp\coco2yolo_temp_20250624_144835\_annotations.coco
+2025-06-24 14:48:35,584 - INFO - COCO2YOLO Converter : 成功转换: _annotations.coco.json
+2025-06-24 14:48:35,584 - INFO - COCO2YOLO Converter : 转换: _annotations.coco_0.json -> D:\BTD\yoloservice\data\raw\temp\coco2yolo_temp_20250624_144835\_annotations.coco_0
+2025-06-24 14:48:35,585 - INFO - COCO2YOLO Converter : 成功转换: _annotations.coco_0.json
+2025-06-24 14:48:35,585 - INFO - COCO2YOLO Converter : 转换: _annotations.coco_1.json -> D:\BTD\yoloservice\data\raw\temp\coco2yolo_temp_20250624_144835\_annotations.coco_1
+2025-06-24 14:48:35,585 - INFO - COCO2YOLO Converter : 成功转换: _annotations.coco_1.json
+2025-06-24 14:48:35,588 - INFO - COCO2YOLO Converter : 步骤4: 文件移动与清理
+2025-06-24 14:48:35,589 - INFO - COCO2YOLO Converter : 所有文件已移动到暂存区: D:\BTD\yoloservice\data\raw\yolo_staged_labels
+2025-06-24 14:48:35,591 - INFO - COCO2YOLO Converter : 已清理临时目录: D:\BTD\yoloservice\data\raw\temp\coco2yolo_temp_20250624_144835
+2025-06-24 14:48:35,592 - INFO - COCO2YOLO Converter : 步骤5: 返回转换结果
+2025-06-24 14:48:35,592 - INFO - COCO2YOLO Converter : 转换完成!

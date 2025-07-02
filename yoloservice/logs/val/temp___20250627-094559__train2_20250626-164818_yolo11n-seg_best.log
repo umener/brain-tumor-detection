@@ -1,0 +1,97 @@
+2025-06-27 09:45:59,394 - INFO - YOLO_Validation : 日志记录器已启动，日志文件保存在: D:\BTD\yoloservice\logs\val\temp___20250627-094559__train2_20250626-164818_yolo11n-seg_best.log
+2025-06-27 09:45:59,394 - INFO - YOLO_Validation : 日志记录器的根目录: D:\BTD\yoloservice\logs
+2025-06-27 09:45:59,394 - INFO - YOLO_Validation : 日志记录器的名称: YOLO_Validation
+2025-06-27 09:45:59,394 - INFO - YOLO_Validation : 日志记录器的类型: val
+2025-06-27 09:45:59,394 - INFO - YOLO_Validation : 日志记录器的级别: INFO
+2025-06-27 09:45:59,394 - INFO - YOLO_Validation : =========================日志记录器初始化成功=========================
+2025-06-27 09:46:01,432 - INFO - YOLO_Validation : ========================================
+2025-06-27 09:46:01,432 - INFO - YOLO_Validation : 设备信息概览
+2025-06-27 09:46:01,432 - INFO - YOLO_Validation : ========================================
+2025-06-27 09:46:01,432 - INFO - YOLO_Validation : 基本设备信息:
+2025-06-27 09:46:01,432 - INFO - YOLO_Validation :     操作系统            : Windows 11
+2025-06-27 09:46:01,432 - INFO - YOLO_Validation :     Python版本          : 3.12.0
+2025-06-27 09:46:01,432 - INFO - YOLO_Validation :     Python解释器路径    : C:\anaconda\envs\btd\python.exe
+2025-06-27 09:46:01,434 - INFO - YOLO_Validation :     Python虚拟环境      : btd
+2025-06-27 09:46:01,434 - INFO - YOLO_Validation :     当前检测时间        : 2025-06-27 09:45:59
+2025-06-27 09:46:01,434 - INFO - YOLO_Validation :     主机名              : DELL-lyw
+2025-06-27 09:46:01,434 - INFO - YOLO_Validation :     当前用户            : 13095
+2025-06-27 09:46:01,434 - INFO - YOLO_Validation : CPU信息:
+2025-06-27 09:46:01,434 - INFO - YOLO_Validation :     CPU型号             : 12th Gen Intel(R) Core(TM) i5-12500H
+2025-06-27 09:46:01,434 - INFO - YOLO_Validation :     CPU物理核心数       : 12
+2025-06-27 09:46:01,434 - INFO - YOLO_Validation :     CPU逻辑核心数       : 16
+2025-06-27 09:46:01,434 - INFO - YOLO_Validation :     CPU使用率           : 16.2%
+2025-06-27 09:46:01,434 - INFO - YOLO_Validation : GPU信息:
+2025-06-27 09:46:01,434 - INFO - YOLO_Validation :     CUDA是否可用        : True
+2025-06-27 09:46:01,434 - INFO - YOLO_Validation :     CUDA版本            : 12.6
+2025-06-27 09:46:01,434 - INFO - YOLO_Validation :     NVIDIA驱动程序版本  : 566.35
+2025-06-27 09:46:01,434 - INFO - YOLO_Validation :     可用的GPU数量       : 1
+2025-06-27 09:46:01,434 - INFO - YOLO_Validation : 内存信息:
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     总内存              : 15.69 GB
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     已使用内存          : 11.49 GB
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     剩余内存            : 4.20 GB
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     内存使用率          : 73.2%
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation : 环境信息:
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     PyTorch版本         : 2.7.1+cu126
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     cuDNN版本           : 90701
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     Ultralytics_Version : 8.3.152
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     ONNX版本            : 1.18.0
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     Numpy版本           : 2.1.2
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     OpenCV版本          : 4.11.0.86
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     Pillow版本          : 11.0.0
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     Torchvision版本     : 0.22.1+cu126
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation : 磁盘信息:
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     总空间              : 100.00 GB
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     已用空间            : 86.92 GB
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     剩余空间            : 13.08 GB
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     使用率              : 86.9%
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation : GPU详细列表:
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :   --- GPU 0 详情 ---
+2025-06-27 09:46:01,436 - INFO - YOLO_Validation :     GPU_0_型号               : NVIDIA GeForce RTX 3050 Ti Laptop GPU
+2025-06-27 09:46:01,438 - INFO - YOLO_Validation :     GPU_0_总显存             : 4.00 GB
+2025-06-27 09:46:01,438 - INFO - YOLO_Validation :     GPU_0_算力               : 8.6
+2025-06-27 09:46:01,439 - INFO - YOLO_Validation :     GPU_0_多处理器数量       : 20
+2025-06-27 09:46:01,439 - INFO - YOLO_Validation :     GPU_0_PyTorch_已分配显存 : 0.00 MB
+2025-06-27 09:46:01,439 - INFO - YOLO_Validation :     GPU_0_PyTorch_已缓存显存 : 0.00 MB
+2025-06-27 09:46:01,439 - INFO - YOLO_Validation :     GPU_0_利用率             : GPU:0% / Mem:0%
+2025-06-27 09:46:01,439 - INFO - YOLO_Validation :     GPU_0_实时使用显存       : 134.00 MB
+2025-06-27 09:46:01,439 - INFO - YOLO_Validation : ========================================
+2025-06-27 09:46:01,439 - INFO - YOLO_Validation : ================开始模型参数信息================
+2025-06-27 09:46:01,439 - INFO - YOLO_Validation : Parameters
+2025-06-27 09:46:01,440 - INFO - YOLO_Validation : ----------------------------------------
+2025-06-27 09:46:01,440 - INFO - YOLO_Validation : data                : D:\BTD\yoloservice\configs\data.yaml (来源: [命令行])
+2025-06-27 09:46:01,440 - INFO - YOLO_Validation : imgsz               : 640 (来源: [命令行])
+2025-06-27 09:46:01,440 - INFO - YOLO_Validation : batch               : 16 (来源: [命令行])
+2025-06-27 09:46:01,440 - INFO - YOLO_Validation : save_json           : False (来源: [YAML])
+2025-06-27 09:46:01,441 - INFO - YOLO_Validation : conf                : 0.25 (来源: [命令行])
+2025-06-27 09:46:01,441 - INFO - YOLO_Validation : iou                 : 0.45 (来源: [命令行])
+2025-06-27 09:46:01,441 - INFO - YOLO_Validation : max_det             : 300 (来源: [YAML])
+2025-06-27 09:46:01,441 - INFO - YOLO_Validation : half                : True (来源: [YAML])
+2025-06-27 09:46:01,441 - INFO - YOLO_Validation : device              : 0 (来源: [命令行])
+2025-06-27 09:46:01,441 - INFO - YOLO_Validation : dnn                 : False (来源: [YAML])
+2025-06-27 09:46:01,441 - INFO - YOLO_Validation : plots               : True (来源: [YAML])
+2025-06-27 09:46:01,441 - INFO - YOLO_Validation : classes             : None (来源: [YAML])
+2025-06-27 09:46:01,441 - INFO - YOLO_Validation : rect                : True (来源: [YAML])
+2025-06-27 09:46:01,441 - INFO - YOLO_Validation : split               : test (来源: [命令行])
+2025-06-27 09:46:01,441 - INFO - YOLO_Validation : project             : D:\BTD\yoloservice\runs\val (来源: [YAML])
+2025-06-27 09:46:01,442 - INFO - YOLO_Validation : name                : exp (来源: [YAML])
+2025-06-27 09:46:01,442 - INFO - YOLO_Validation : verbose             : False (来源: [YAML])
+2025-06-27 09:46:01,442 - INFO - YOLO_Validation : save_txt            : True (来源: [YAML])
+2025-06-27 09:46:01,442 - INFO - YOLO_Validation : save_conf           : True (来源: [YAML])
+2025-06-27 09:46:01,442 - INFO - YOLO_Validation : save_crop           : True (来源: [YAML])
+2025-06-27 09:46:01,442 - INFO - YOLO_Validation : workers             : 8 (来源: [命令行])
+2025-06-27 09:46:01,442 - INFO - YOLO_Validation : augment             : False (来源: [YAML])
+2025-06-27 09:46:01,443 - INFO - YOLO_Validation : agnostic_nms        : False (来源: [YAML])
+2025-06-27 09:46:01,443 - INFO - YOLO_Validation : single_cls          : False (来源: [YAML])
+2025-06-27 09:46:01,443 - INFO - YOLO_Validation : weights             : train2_20250626-164818_yolo11n-seg_best.pt (来源: [命令行])
+2025-06-27 09:46:01,444 - INFO - YOLO_Validation : ========================================
+2025-06-27 09:46:01,444 - INFO - YOLO_Validation : 数据集信息 (Test 模式)
+2025-06-27 09:46:01,444 - INFO - YOLO_Validation : ----------------------------------------
+2025-06-27 09:46:01,444 - INFO - YOLO_Validation : Config File         : data.yaml
+2025-06-27 09:46:01,444 - INFO - YOLO_Validation : Class Count         : 3
+2025-06-27 09:46:01,444 - INFO - YOLO_Validation : Class Names         : glioma_tumor, meningioma_tumor, pituitary_tumor
+2025-06-27 09:46:01,444 - INFO - YOLO_Validation : Sample Count        : 39
+2025-06-27 09:46:01,444 - INFO - YOLO_Validation : Data Source         : Test images from: D:\BTD\yoloservice\data\test\images
+2025-06-27 09:46:01,444 - INFO - YOLO_Validation : ----------------------------------------
+2025-06-27 09:46:01,444 - ERROR - YOLO_Validation : 模型权重文件不存在: D:\BTD\yoloservice\models\checkpoints\train2_20250626-164818_yolo11n-seg_best.pt
+2025-06-27 09:46:01,444 - ERROR - YOLO_Validation : An error occurred: 模型权重文件不存在: D:\BTD\yoloservice\models\checkpoints\train2_20250626-164818_yolo11n-seg_best.pt
+2025-06-27 09:46:01,444 - INFO - YOLO_Validation : YOLO 验证流程结束并释放资源

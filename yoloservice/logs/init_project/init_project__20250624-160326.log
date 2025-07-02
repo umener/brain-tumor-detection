@@ -1,0 +1,65 @@
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 日志记录器已启动，日志文件保存在: D:\BTD\yoloservice\logs\init_project\init_project__20250624-160326.log
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 日志记录器的根目录: D:\BTD\yoloservice\logs
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 日志记录器的名称: YOLO Initialize Project
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 日志记录器的类型: init_project
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 日志记录器的级别: INFO
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : =========================日志记录器初始化成功=========================
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : ============================================================
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : ==========================开始初始化项目===========================
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : ============================================================
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 当前项目的根目录为: D:\BTD\yoloservice
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : ============================================================
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : =======================检查并创建核心项目目录结构========================
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : ============================================================
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 目录已存在: configs
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 目录已存在: data
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 目录已存在: runs
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 目录已存在: models
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 目录已存在: models\checkpoints
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 目录已存在: models\pretrained
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 目录已存在: logs
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 目录已存在: scripts
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 目录已存在: data\train\images
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 目录已存在: data\val\images
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 目录已存在: data\test\images
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 目录已存在: data\train\labels
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 目录已存在: data\val\labels
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : 目录已存在: data\test\labels
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : ============================================================
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : ======================核心项目文件结构检查及创建完成=======================
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : ============================================================
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : ============================================================
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : =========================开始检查原始数据目录=========================
+2025-06-24 16:03:26,977 - INFO - YOLO Initialize Project : ============================================================
+2025-06-24 16:03:26,994 - INFO - YOLO Initialize Project : 原始原始图像文件目录已存在: data\raw\images (包含 880 个文件)
+2025-06-24 16:03:26,994 - INFO - YOLO Initialize Project : 原始原始标注文件目录已存在: data\raw\original_annotations (包含 3 个文件)
+2025-06-24 16:03:26,994 - INFO - YOLO Initialize Project : ================================================================================
+2025-06-24 16:03:26,994 - INFO - YOLO Initialize Project : ===================================项目初始化结果汇总====================================
+2025-06-24 16:03:26,994 - INFO - YOLO Initialize Project : ================================================================================
+2025-06-24 16:03:26,995 - INFO - YOLO Initialize Project : 本次初始化没有创建任何新目录
+2025-06-24 16:03:26,995 - INFO - YOLO Initialize Project : 共检测到 14 个已存在目录:
+2025-06-24 16:03:26,995 - INFO - YOLO Initialize Project :   - configs
+2025-06-24 16:03:26,995 - INFO - YOLO Initialize Project :   - data
+2025-06-24 16:03:26,995 - INFO - YOLO Initialize Project :   - runs
+2025-06-24 16:03:26,995 - INFO - YOLO Initialize Project :   - models
+2025-06-24 16:03:26,995 - INFO - YOLO Initialize Project :   - models\checkpoints
+2025-06-24 16:03:26,995 - INFO - YOLO Initialize Project :   - models\pretrained
+2025-06-24 16:03:26,995 - INFO - YOLO Initialize Project :   - logs
+2025-06-24 16:03:26,995 - INFO - YOLO Initialize Project :   - scripts
+2025-06-24 16:03:26,996 - INFO - YOLO Initialize Project :   - data\train\images
+2025-06-24 16:03:26,996 - INFO - YOLO Initialize Project :   - data\val\images
+2025-06-24 16:03:26,996 - INFO - YOLO Initialize Project :   - data\test\images
+2025-06-24 16:03:26,996 - INFO - YOLO Initialize Project :   - data\train\labels
+2025-06-24 16:03:26,996 - INFO - YOLO Initialize Project :   - data\val\labels
+2025-06-24 16:03:26,996 - INFO - YOLO Initialize Project :   - data\test\labels
+2025-06-24 16:03:26,996 - INFO - YOLO Initialize Project : --------------------------------------------------------------------------------
+2025-06-24 16:03:26,996 - INFO - YOLO Initialize Project : ----------------------------------原始数据集目录检查结果-----------------------------------
+2025-06-24 16:03:26,996 - INFO - YOLO Initialize Project :   • data\raw\images: 已存在 (880 个文件)
+2025-06-24 16:03:26,996 - INFO - YOLO Initialize Project :   • data\raw\original_annotations: 已存在 (3 个文件)
+2025-06-24 16:03:26,996 - INFO - YOLO Initialize Project : ================================================================================
+2025-06-24 16:03:26,997 - INFO - YOLO Initialize Project : =====================================重要提示:======================================
+2025-06-24 16:03:26,997 - INFO - YOLO Initialize Project :                              请根据上述原始数据集目录的检查结果进行操作                              
+2025-06-24 16:03:26,997 - INFO - YOLO Initialize Project : ================================================================================
+2025-06-24 16:03:26,997 - INFO - YOLO Initialize Project : ====================================项目初始化完成=====================================
+2025-06-24 16:03:26,997 - INFO - YOLO Initialize Project : ================================================================================
+2025-06-24 16:03:26,997 - INFO - YOLO Initialize Project : 性能测试：函数 项目初始化 执行耗时：9.89 milliseconds

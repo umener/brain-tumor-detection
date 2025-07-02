@@ -1,0 +1,36 @@
+2025-06-26 11:13:46,028 - INFO - YOLO Trans : 日志记录器已启动，日志文件保存在: D:\BTD\yoloservice\logs\yolo_trans\yolo_trans__20250626-111346.log
+2025-06-26 11:13:46,028 - INFO - YOLO Trans : 日志记录器的根目录: D:\BTD\yoloservice\logs
+2025-06-26 11:13:46,028 - INFO - YOLO Trans : 日志记录器的名称: YOLO Trans
+2025-06-26 11:13:46,028 - INFO - YOLO Trans : 日志记录器的类型: yolo_trans
+2025-06-26 11:13:46,028 - INFO - YOLO Trans : 日志记录器的级别: INFO
+2025-06-26 11:13:46,028 - INFO - YOLO Trans : =========================日志记录器初始化成功=========================
+2025-06-26 11:13:46,030 - INFO - YOLO Trans : ======================开始清理旧的数据集内容和配置文件======================
+2025-06-26 11:13:46,030 - INFO - YOLO Trans : 删除已经存在的 'train' images目录：data\train\images
+2025-06-26 11:13:46,032 - INFO - YOLO Trans : 重新创建 'train' images目录：data\train\images
+2025-06-26 11:13:46,032 - INFO - YOLO Trans : 删除已经存在的 'train' labels目录：data\train\labels
+2025-06-26 11:13:46,032 - INFO - YOLO Trans : 重新创建 'train' labels目录：data\train\labels
+2025-06-26 11:13:46,032 - INFO - YOLO Trans : 删除已经存在的 'val' images目录：data\val\images
+2025-06-26 11:13:46,032 - INFO - YOLO Trans : 重新创建 'val' images目录：data\val\images
+2025-06-26 11:13:46,032 - INFO - YOLO Trans : 删除已经存在的 'val' labels目录：data\val\labels
+2025-06-26 11:13:46,034 - INFO - YOLO Trans : 重新创建 'val' labels目录：data\val\labels
+2025-06-26 11:13:46,034 - INFO - YOLO Trans : 删除已经存在的 'test' images目录：data\test\images
+2025-06-26 11:13:46,034 - INFO - YOLO Trans : 重新创建 'test' images目录：data\test\images
+2025-06-26 11:13:46,034 - INFO - YOLO Trans : 删除已经存在的 'test' labels目录：data\test\labels
+2025-06-26 11:13:46,034 - INFO - YOLO Trans : 重新创建 'test' labels目录：data\test\labels
+2025-06-26 11:13:46,034 - INFO - YOLO Trans : ===================旧数据集内容清理完成，新的目录结构创建完成====================
+2025-06-26 11:13:46,036 - INFO - YOLO Trans : =======================开始进行数据集准备与划分工作=======================
+2025-06-26 11:13:46,036 - INFO - YOLO Trans : 处理原始标注数据：COCO格式
+2025-06-26 11:13:46,358 - INFO - YOLO Trans : 已经清理 YOLO 标签暂存目录: data\raw\yolo_staged_labels
+2025-06-26 11:13:46,362 - CRITICAL - YOLO Trans : COCO转换失败或未提取到有效的类别信息，数据集处理终止
+2025-06-26 11:13:46,363 - INFO - YOLO Trans : ========================数据集准备与划分工作完成========================
+2025-06-26 11:13:46,363 - INFO - YOLO Trans : 性能测试：函数 数据集准备与划分 执行耗时：327.01 milliseconds
+2025-06-26 11:13:46,364 - INFO - YOLO Trans : 所有数据处理流程完成，请检查以下路径文件
+2025-06-26 11:13:46,364 - INFO - YOLO Trans : 训练集图像目录：data\train\images
+2025-06-26 11:13:46,364 - INFO - YOLO Trans : 训练集标注文件：data\train\labels
+2025-06-26 11:13:46,365 - INFO - YOLO Trans : 验证集图像目录：data\val\images
+2025-06-26 11:13:46,366 - INFO - YOLO Trans : 验证集标注文件：data\val\labels
+2025-06-26 11:13:46,366 - INFO - YOLO Trans : 测试集图像目录：data\test\images
+2025-06-26 11:13:46,367 - INFO - YOLO Trans : 测试集标注文件：data\test\labels
+2025-06-26 11:13:46,368 - INFO - YOLO Trans : 数据集配置文件：configs
+2025-06-26 11:13:46,368 - INFO - YOLO Trans : 详细的日志文件位于 logs
+2025-06-26 11:13:46,369 - INFO - YOLO Trans : 接下来请执行数据验证脚本 yolo_validate.py 以验证数据转换是否正确

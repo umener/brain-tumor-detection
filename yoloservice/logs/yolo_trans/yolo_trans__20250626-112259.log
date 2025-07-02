@@ -1,0 +1,60 @@
+2025-06-26 11:22:59,485 - INFO - YOLO Trans : 日志记录器已启动，日志文件保存在: D:\BTD\yoloservice\logs\yolo_trans\yolo_trans__20250626-112259.log
+2025-06-26 11:22:59,485 - INFO - YOLO Trans : 日志记录器的根目录: D:\BTD\yoloservice\logs
+2025-06-26 11:22:59,487 - INFO - YOLO Trans : 日志记录器的名称: YOLO Trans
+2025-06-26 11:22:59,487 - INFO - YOLO Trans : 日志记录器的类型: yolo_trans
+2025-06-26 11:22:59,487 - INFO - YOLO Trans : 日志记录器的级别: INFO
+2025-06-26 11:22:59,487 - INFO - YOLO Trans : =========================日志记录器初始化成功=========================
+2025-06-26 11:22:59,487 - INFO - YOLO Trans : ======================开始清理旧的数据集内容和配置文件======================
+2025-06-26 11:22:59,492 - INFO - YOLO Trans : 删除已经存在的 'train' images目录：data\train\images
+2025-06-26 11:22:59,493 - INFO - YOLO Trans : 重新创建 'train' images目录：data\train\images
+2025-06-26 11:22:59,493 - INFO - YOLO Trans : 删除已经存在的 'train' labels目录：data\train\labels
+2025-06-26 11:22:59,493 - INFO - YOLO Trans : 重新创建 'train' labels目录：data\train\labels
+2025-06-26 11:22:59,493 - INFO - YOLO Trans : 删除已经存在的 'val' images目录：data\val\images
+2025-06-26 11:22:59,493 - INFO - YOLO Trans : 重新创建 'val' images目录：data\val\images
+2025-06-26 11:22:59,493 - INFO - YOLO Trans : 删除已经存在的 'val' labels目录：data\val\labels
+2025-06-26 11:22:59,498 - INFO - YOLO Trans : 重新创建 'val' labels目录：data\val\labels
+2025-06-26 11:22:59,498 - INFO - YOLO Trans : 删除已经存在的 'test' images目录：data\test\images
+2025-06-26 11:22:59,500 - INFO - YOLO Trans : 重新创建 'test' images目录：data\test\images
+2025-06-26 11:22:59,500 - INFO - YOLO Trans : 删除已经存在的 'test' labels目录：data\test\labels
+2025-06-26 11:22:59,500 - INFO - YOLO Trans : 重新创建 'test' labels目录：data\test\labels
+2025-06-26 11:22:59,500 - INFO - YOLO Trans : ===================旧数据集内容清理完成，新的目录结构创建完成====================
+2025-06-26 11:22:59,500 - INFO - YOLO Trans : =======================开始进行数据集准备与划分工作=======================
+2025-06-26 11:22:59,500 - INFO - YOLO Trans : 处理原始标注数据：COCO格式
+2025-06-26 11:22:59,500 - INFO - YOLO Trans : 已经清理 YOLO 标签暂存目录: data\raw\yolo_staged_labels
+2025-06-26 11:23:00,192 - INFO - YOLO Trans : COCO转换成功
+2025-06-26 11:23:00,196 - INFO - YOLO Trans : 原始图像及标注文件暂存区通过检查：图像位于 'data\raw\images'标签位于 'data\raw\yolo_staged_labels'
+2025-06-26 11:23:00,247 - INFO - YOLO Trans : 找到匹配的图像文件，共 756 个
+2025-06-26 11:23:00,251 - INFO - YOLO Trans : 数据集划分完成
+2025-06-26 11:23:00,251 - INFO - YOLO Trans : 训练集样本数量：680
+2025-06-26 11:23:00,251 - INFO - YOLO Trans : 验证集样本数量：37
+2025-06-26 11:23:00,251 - INFO - YOLO Trans : 测试集样本数量：39
+2025-06-26 11:23:00,251 - INFO - YOLO Trans : 开始处理：train 数据集,该数据集共680个样本
+2025-06-26 11:23:01,376 - INFO - YOLO Trans : train 数据集图像复制完成，成功复制 680 张，失败复制图像 0 张
+2025-06-26 11:23:06,845 - INFO - YOLO Trans : train 数据集标签复制完成，成功复制标签 680 个，失败复制标签 0 个
+2025-06-26 11:23:06,845 - INFO - YOLO Trans : 开始处理：val 数据集,该数据集共37个样本
+2025-06-26 11:23:06,918 - INFO - YOLO Trans : val 数据集图像复制完成，成功复制 37 张，失败复制图像 0 张
+2025-06-26 11:23:07,224 - INFO - YOLO Trans : val 数据集标签复制完成，成功复制标签 37 个，失败复制标签 0 个
+2025-06-26 11:23:07,224 - INFO - YOLO Trans : 开始处理：test 数据集,该数据集共39个样本
+2025-06-26 11:23:07,264 - INFO - YOLO Trans : test 数据集图像复制完成，成功复制 39 张，失败复制图像 0 张
+2025-06-26 11:23:07,625 - INFO - YOLO Trans : test 数据集标签复制完成，成功复制标签 39 个，失败复制标签 0 个
+2025-06-26 11:23:07,625 - INFO - YOLO Trans : 成功生成 data.yaml 文件：configs\data.yaml
+2025-06-26 11:23:07,625 - INFO - YOLO Trans : data.yaml 文件内容：
+path: D:\BTD\yoloservice\data
+train: D:\BTD\yoloservice\data\train\images
+val: D:\BTD\yoloservice\data\val\images
+test: D:\BTD\yoloservice\data\test\images
+nc: 3
+names: [glioma_tumor, meningioma_tumor, pituitary_tumor]
+
+2025-06-26 11:23:07,625 - INFO - YOLO Trans : ========================数据集准备与划分工作完成========================
+2025-06-26 11:23:07,625 - INFO - YOLO Trans : 性能测试：函数 数据集准备与划分 执行耗时：8.13 seconds
+2025-06-26 11:23:07,625 - INFO - YOLO Trans : 所有数据处理流程完成，请检查以下路径文件
+2025-06-26 11:23:07,625 - INFO - YOLO Trans : 训练集图像目录：data\train\images
+2025-06-26 11:23:07,625 - INFO - YOLO Trans : 训练集标注文件：data\train\labels
+2025-06-26 11:23:07,625 - INFO - YOLO Trans : 验证集图像目录：data\val\images
+2025-06-26 11:23:07,625 - INFO - YOLO Trans : 验证集标注文件：data\val\labels
+2025-06-26 11:23:07,625 - INFO - YOLO Trans : 测试集图像目录：data\test\images
+2025-06-26 11:23:07,625 - INFO - YOLO Trans : 测试集标注文件：data\test\labels
+2025-06-26 11:23:07,625 - INFO - YOLO Trans : 数据集配置文件：configs
+2025-06-26 11:23:07,625 - INFO - YOLO Trans : 详细的日志文件位于 logs
+2025-06-26 11:23:07,625 - INFO - YOLO Trans : 接下来请执行数据验证脚本 yolo_validate.py 以验证数据转换是否正确

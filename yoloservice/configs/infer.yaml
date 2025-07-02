@@ -1,0 +1,94 @@
+# === YOLO 推理模式核心配置 ===
+# 注：带(*)参数为高频调整项
+# 参数参考: https://docs.ultralytics.com/zh/modes/predict/#inference-arguments
+# 可手动修改参数，或通过命令行进行覆盖如 (--conf 0.5)
+
+# --- 常见参数 (工地安全帽检测高频调整) ---
+# (*)数据源，指定工地视频/图像路径、URL或摄像头ID
+source: 0
+# (*)输入图像尺寸，整数或 (高度, 宽度) 元组，工地场景建议 640 或 1280
+imgsz: 640
+# (*)置信度阈值，低于此值的检测将被忽略，建议 0.3-0.5 减少误报
+conf: 0.25
+# (*)推理设备，例如 cpu, cuda:0 或 0，None 为自动选择
+device: 0
+# (*)视频帧采样间隔，1 为每帧处理，增大可跳帧提升速度，默认 1
+vid_stride: 1
+# (*)保存注释图像/视频到文件，便于记录违规，Python 中默认 False
+save: False
+# (*)保存检测结果为 txt 文件，格式为 [class] [x_center] [y_center] [width] [height] [confidence]，便于分析，默认 False
+save_txt: False
+# (*)保存裁剪后的安全帽图像，用于存档或复核，默认 False
+save_crop: False
+# (*)实时显示注释图像/视频，适合现场监控或调试，默认 False
+show: False
+# (*)启用美化绘制，支持圆角标签和中文显示，适合高质量可视化，默认 True
+beautify: True
+# (*)启用中文显示，适合高质量可视化，默认 True
+use-chinese: True
+# (*)美化字体大小，以 720p 分辨率为基准，自动缩放，默认 22
+font_size: 22
+# (*)美化线宽，用于绘制检测框和标签，以 720p 为基准，自动缩放，默认 4
+beauty_line_width: 4
+# (*)美化标签水平内边距，以 720p 为基准，自动缩放，默认 30
+label_padding_x: 30
+# (*)美化标签垂直内边距，以 720p 为基准，自动缩放，默认 18
+label_padding_y: 18
+# (*)美化圆角半径，用于标签圆角效果，以 720p 为基准，自动缩放，默认 8
+radius: 8
+# (*)日志文件编码格式，支持 utf-8-sig、utf-8 等，默认 utf-8-sig
+log_encoding: utf-8-sig
+# (*)是否使用 YAML 配置文件覆盖命令行参数，适合批量配置，默认 True
+use_yaml: True
+# (*)日志级别，支持 DEBUG、INFO、WARNING、ERROR，默认 INFO
+log_level: INFO
+# (*)额外 YOLO 参数，以键值对形式传递，例如 --key value，默认空列表
+extra_args: []
+
+# --- 核心参数 ---
+# 批次大小，仅对目录/视频/txt 文件有效，默认 1
+batch: 1
+
+# --- 模型推理参数 ---
+# (*)NMS 的 IoU 阈值，控制重叠框的剔除，默认 0.7
+iou: 0.7
+# 每幅图像最大检测次数，默认 300
+max_det: 300
+# 过滤特定类别 ID，例如 [0, 1]，默认 None
+classes: None
+# 与类别无关的 NMS，合并不同类别重叠框，默认 False
+agnostic_nms: False
+# 测试时数据增强 (TTA)，提升鲁棒性但降低速度，默认 False
+augment: False
+# 半精度 (FP16) 推理，加速 GPU 推理，默认 False
+half: False
+# 视频流帧排队，True 排队不丢帧，False 丢弃旧帧，默认 False
+stream_buffer: False
+# 返回高分辨率分割掩码，默认 False
+retina_masks: False
+
+# --- 保存与项目参数 ---
+# 保存预测结果的项目目录名称，默认 None
+project: D:\BTD\yoloservice\runs\infer
+# 预测运行名称，自动生成子目录，默认 None
+name: predict
+# 保存视频单帧为图像，默认 False
+save_frames: False
+# 在 txt 文件中包含置信度分数，默认 False
+save_conf: False
+# 启用流式推理，适合长视频/大量图像，默认 False
+stream: False
+
+# --- 可视化参数 ---
+# 显示每次检测的标签，默认 True
+show_labels: True
+# (*)显示每次检测的置信度得分，默认 True
+show_conf: True
+# 显示检测框，默认 True
+show_boxes: True
+# 检测框线宽，None 为自适应，默认 None
+line_width: None
+# 激活模型特征可视化，调试用，默认 False
+visualize: False
+# 显示详细推理日志，默认 True
+verbose: True

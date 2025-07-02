@@ -1,0 +1,7 @@
+2025-06-24 10:07:40,374 - INFO - Yolo Default : 日志记录器已启动，日志文件保存在: D:\yolo\logs\performance_test\performance_test__20250624-100740.log
+2025-06-24 10:07:40,381 - INFO - Yolo Default : 日志记录器的根目录: D:\yolo\logs
+2025-06-24 10:07:40,381 - INFO - Yolo Default : 日志记录器的名称: Yolo Default
+2025-06-24 10:07:40,381 - INFO - Yolo Default : 日志记录器的类型: performance_test
+2025-06-24 10:07:40,382 - INFO - Yolo Default : 日志记录器的级别: INFO
+2025-06-24 10:07:40,382 - INFO - Yolo Default : =========================日志记录器初始化成功=========================
+2025-06-24 10:07:42,884 - INFO - Yolo Default : 性能测试：函数 测试函数 执行耗时：5 次，平均耗时：500.63 milliseconds

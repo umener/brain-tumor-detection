@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>首页 - 智能医疗影像平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #eaf6fb 0%, #f5fafd 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', 'Roboto', 'Arial', 'LXGWWenKai-Bold', sans-serif;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0; left: 0; bottom: 0;
+            width: 220px;
+            background: #fff;
+            border-right: 1.5px solid #e3f2fd;
+            box-shadow: 2px 0 18px #b3e0fc22;
+            z-index: 100;
+            padding-top: 32px;
+        }
+        .sidebar .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #ffb300;
+            letter-spacing: 1.5px;
+            margin-bottom: 36px;
+            text-align: center;
+        }
+        .sidebar .nav-link {
+            color: #1976d2;
+            font-weight: 700;
+            font-size: 1.13rem;
+            border-radius: 8px;
+            margin: 6px 12px;
+            transition: background 0.15s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sidebar .nav-link img {
+            width: 22px; height: 22px;
+        }
+        .sidebar .nav-link.active, .sidebar .nav-link:hover {
+            background: linear-gradient(90deg, #e3f2fd 0%, #b3e0fc33 100%);
+            color: #1565c0;
+        }
+        .main-content {
+            margin-left: 240px;
+            padding: 36px 24px 24px 24px;
+        }
+        .sys-title {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #1976d2;
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .sys-title img { width: 38px; height: 38px; }
+        .sys-desc {
+            color: #1976d2;
+            font-size: 1.18rem;
+            margin-bottom: 32px;
+            font-weight: 600;
+        }
+        .stat-card {
+            border-radius: 16px;
+            box-shadow: 0 2px 18px #b3e0fc22;
+            border: 1.5px solid #e3f2fd;
+            background: #fff;
+            padding: 22px 18px 22px 18px;
+            margin-bottom: 24px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .stat-card .stat-icon {
+            width: 44px; height: 44px; background: #e3f2fd; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 2px 8px #b3e0fc22;
+        }
+        .stat-title {
+            color: #1976d2;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        .stat-value {
+            font-size: 2.1rem;
+            font-weight: 900;
+            color: #ff9800;
+            margin: 8px 0 0 0;
+        }
+        .chart-box {
+            background: #f5fafd;
+            border-radius: 14px;
+            border: 1.5px solid #e3f2fd;
+            box-shadow: 0 2px 12px #b3e0fc22;
+            padding: 18px 12px;
+            margin-bottom: 24px;
+        }
+        .recent-img-section .card {
+            border-radius: 14px;
+            transition: box-shadow 0.2s;
+        }
+        .recent-img-section .card:hover {
+            box-shadow: 0 4px 18px #1976d233;
+        }
+        .recent-img-section .card-img-top {
+            border-radius: 10px 10px 0 0;
+            border-bottom: 1px solid #e3f2fd;
+        }
+        .recent-img-section .card-body {
+            background: #f8fafc;
+            border-radius: 0 0 10px 10px;
+        }
+        .recent-img-section .icon {
+            width: 16px; height: 16px; margin-right: 4px; vertical-align: -2px;
+        }
+        @media (max-width: 900px) {
+            .sidebar { display: none; }
+            .main-content { margin-left: 0; padding: 16px 4px; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="sidebar d-flex flex-column align-items-center">
+    <div class="logo mb-4"><img src="{{ url_for('static', filename='icons/开始.png') }}" style="width:32px;height:32px;border-radius:8px;vertical-align:-8px;"> <span>yolo医疗肿瘤检测平台</span></div>
+    <nav class="nav flex-column w-100">
+        <a class="nav-link active" href="/"><img src="{{ url_for('static', filename='icons/开始.png') }}"> 首页</a>
+        <a class="nav-link" href="/detect"><img src="{{ url_for('static', filename='icons/摄像头_camera-one.png') }}"> 肿瘤检测</a>
+        <a class="nav-link" href="/history"><img src="{{ url_for('static', filename='icons/icon-date.png') }}"> 历史记录</a>
+    </nav>
+    <div style="position:absolute;left:0;bottom:0;width:220px;opacity:0.92;z-index:10;">
+        <img src="{{ url_for('static', filename='icons/3321.png') }}" style="width:100%;border-radius:18px 18px 0 0;box-shadow:0 2px 12px #b3e0fc33;">
+    </div>
+</div>
+<div class="main-content">
+    <div class="sys-title"><img src="{{ url_for('static', filename='icons/icon-author.png') }}"> 智能医疗影像与肿瘤分析平台</div>
+    <div class="sys-desc">基于深度学习的医学影像检测与AI智能诊断一体化平台，支持肿瘤检测、历史记录管理与PDF报告导出。</div>
+    <div class="row mb-4">
+        <div class="col-md-4 col-12">
+            <div class="stat-card">
+                <div class="stat-icon"><img src="{{ url_for('static', filename='icons/icon-success.png') }}" style="width:32px;"></div>
+                <div>
+                    <div class="stat-title">累计检测量</div>
+                    <div class="stat-value" id="stat-total">--</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-12">
+            <div class="stat-card">
+                <div class="stat-icon"><img src="{{ url_for('static', filename='icons/icon-date.png') }}" style="width:32px;"></div>
+                <div>
+                    <div class="stat-title">今日检测量</div>
+                    <div class="stat-value" id="stat-today">--</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-12">
+            <div class="stat-card">
+                <div class="stat-icon"><img src="{{ url_for('static', filename='icons/model_select.png') }}" style="width:32px;"></div>
+                <div>
+                    <div class="stat-title">AI建议调用量</div>
+                    <div class="stat-value" id="stat-ai">--</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chart-box">
+        <canvas id="trendChart" height="60"></canvas>
+    </div>
+    {% if recent_images and recent_images|length > 0 %}
+    <div class="recent-img-section mb-4">
+        <div class="fw-bold text-primary mb-2" style="font-size:1.18rem;"><img src="{{ url_for('static', filename='icons/照片_pic.png') }}" style="width:22px;vertical-align:-4px;"> 最近检测图片</div>
+        <div class="row g-3">
+            {% for img in recent_images %}
+            <div class="col-6 col-md-2">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="{{ url_for('static', filename=img.image_path) }}" class="card-img-top" alt="检测图片" style="border-radius:10px;object-fit:cover;height:110px;">
+                    <div class="card-body p-2">
+                        <div class="small text-secondary"><img class="icon" src="{{ url_for('static', filename='icons/icon-date.png') }}">{{ img.time }}</div>
+                        <div class="small text-truncate"><img class="icon" src="{{ url_for('static', filename='icons/icon-author.png') }}">{{ img.patient_name }}</div>
+                        <div class="small text-truncate text-success"><img class="icon" src="{{ url_for('static', filename='icons/icon-success.png') }}">{{ img.ai_diagnosis }}</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    <div class="alert alert-info mt-4"><img src="{{ url_for('static', filename='icons/about.png') }}" style="width:20px;vertical-align:-3px;"> 欢迎使用本平台，点击左侧“肿瘤检测”可体验AI医学影像检测与诊断。</div>
+</div>
+<script>
+// 获取统计数据（假设后端可渲染变量stat_total/stat_today/stat_ai/stat_trend）
+document.getElementById('stat-total').innerText = '{{ stat_total|default(0) }}';
+document.getElementById('stat-today').innerText = '{{ stat_today|default(0) }}';
+document.getElementById('stat-ai').innerText = '{{ stat_ai|default(0) }}';
+// 绘制趋势图
+const trendData = {{ stat_trend|tojson|default('[]') }};
+const labels = Array.isArray(trendData) ? trendData.map(item => item.date) : [];
+const values = Array.isArray(trendData) ? trendData.map(item => item.count) : [];
+const ctx = document.getElementById('trendChart').getContext('2d');
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: '每日检测量',
+            data: values,
+            borderColor: '#1976d2',
+            backgroundColor: 'rgba(25,118,210,0.08)',
+            tension: 0.3,
+            fill: true,
+            pointRadius: 4,
+            pointBackgroundColor: '#ff9800'
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+    }
+});
+</script>
+</body>
+</html>

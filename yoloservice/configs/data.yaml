@@ -1,0 +1,6 @@
+path: D:\BTD\yoloservice\data
+train: D:\BTD\yoloservice\data\train\images
+val: D:\BTD\yoloservice\data\val\images
+test: D:\BTD\yoloservice\data\test\images
+nc: 3
+names: [glioma_tumor, meningioma_tumor, pituitary_tumor]

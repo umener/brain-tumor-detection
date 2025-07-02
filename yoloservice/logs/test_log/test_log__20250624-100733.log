@@ -1,0 +1,7 @@
+2025-06-24 10:07:33,215 - INFO - Yolo Default : 日志记录器已启动，日志文件保存在: D:\yolo\logs\test_log\test_log__20250624-100733.log
+2025-06-24 10:07:33,215 - INFO - Yolo Default : 日志记录器的根目录: D:\yolo\logs
+2025-06-24 10:07:33,215 - INFO - Yolo Default : 日志记录器的名称: Yolo Default
+2025-06-24 10:07:33,215 - INFO - Yolo Default : 日志记录器的类型: test_log
+2025-06-24 10:07:33,215 - INFO - Yolo Default : 日志记录器的级别: INFO
+2025-06-24 10:07:33,215 - INFO - Yolo Default : =========================日志记录器初始化成功=========================
+2025-06-24 10:07:33,215 - INFO - Yolo Default : 测试日志记录器

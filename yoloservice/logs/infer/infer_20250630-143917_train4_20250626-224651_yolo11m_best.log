@@ -1,0 +1,106 @@
+2025-06-30 14:39:17,136 - INFO - YOLO Default : =========================日志记录器初始化开始=========================
+2025-06-30 14:39:17,136 - INFO - YOLO Default : 当前日志记录器的根目录: D:\BTD\yoloservice\logs
+2025-06-30 14:39:17,136 - INFO - YOLO Default : 当前日志记录器的名称: YOLO Default
+2025-06-30 14:39:17,136 - INFO - YOLO Default : 当前日志记录器的类型: infer
+2025-06-30 14:39:17,136 - INFO - YOLO Default : 单前日志记录器的级别: INFO
+2025-06-30 14:39:17,136 - INFO - YOLO Default : =========================日志记录器初始化成功=========================
+2025-06-30 14:39:17,141 - INFO - YOLO Default : 加载推理模型: D:\BTD\yoloservice\models\checkpoints1\train4_20250626-224651_yolo11m_best.pt
+2025-06-30 14:39:17,143 - INFO - YOLO Default : ========= 参数信息 =========
+2025-06-30 14:39:17,143 - INFO - YOLO Default : ================开始模型参数信息================
+2025-06-30 14:39:17,143 - INFO - YOLO Default : Parameters
+2025-06-30 14:39:17,144 - INFO - YOLO Default : ----------------------------------------
+2025-06-30 14:39:17,144 - INFO - YOLO Default : source              : D:\BTD\yoloservice\data\test\images  来源: [命令行]
+2025-06-30 14:39:17,144 - INFO - YOLO Default : device              : 0  来源: [YAML]
+2025-06-30 14:39:17,144 - INFO - YOLO Default : imgsz               : 640  来源: [命令行]
+2025-06-30 14:39:17,144 - INFO - YOLO Default : batch               : 1  来源: [YAML]
+2025-06-30 14:39:17,145 - INFO - YOLO Default : conf                : 0.25  来源: [命令行]
+2025-06-30 14:39:17,145 - INFO - YOLO Default : iou                 : 0.45  来源: [命令行]
+2025-06-30 14:39:17,145 - INFO - YOLO Default : max_det             : 300  来源: [YAML]
+2025-06-30 14:39:17,145 - INFO - YOLO Default : classes             : None  来源: [YAML]
+2025-06-30 14:39:17,145 - INFO - YOLO Default : agnostic_nms        : False  来源: [YAML]
+2025-06-30 14:39:17,145 - INFO - YOLO Default : augment             : False  来源: [YAML]
+2025-06-30 14:39:17,146 - INFO - YOLO Default : half                : False  来源: [YAML]
+2025-06-30 14:39:17,146 - INFO - YOLO Default : stream_buffer       : False  来源: [YAML]
+2025-06-30 14:39:17,146 - INFO - YOLO Default : vid_stride          : 1  来源: [YAML]
+2025-06-30 14:39:17,146 - INFO - YOLO Default : retina_masks        : False  来源: [YAML]
+2025-06-30 14:39:17,146 - INFO - YOLO Default : project             : D:\BTD\yoloservice\runs\infer  来源: [YAML]
+2025-06-30 14:39:17,146 - INFO - YOLO Default : name                : predict  来源: [YAML]
+2025-06-30 14:39:17,146 - INFO - YOLO Default : save                : True  来源: [命令行]
+2025-06-30 14:39:17,146 - INFO - YOLO Default : save_frames         : True  来源: [命令行]
+2025-06-30 14:39:17,146 - INFO - YOLO Default : save_txt            : True  来源: [命令行]
+2025-06-30 14:39:17,146 - INFO - YOLO Default : save_conf           : True  来源: [命令行]
+2025-06-30 14:39:17,146 - INFO - YOLO Default : save_crop           : True  来源: [命令行]
+2025-06-30 14:39:17,146 - INFO - YOLO Default : stream              : False  来源: [YAML]
+2025-06-30 14:39:17,146 - INFO - YOLO Default : show                : False  来源: [YAML]
+2025-06-30 14:39:17,147 - INFO - YOLO Default : show_labels         : True  来源: [YAML]
+2025-06-30 14:39:17,147 - INFO - YOLO Default : show_conf           : True  来源: [YAML]
+2025-06-30 14:39:17,147 - INFO - YOLO Default : show_boxes          : True  来源: [YAML]
+2025-06-30 14:39:17,147 - INFO - YOLO Default : line_width          : 4  来源: [命令行]
+2025-06-30 14:39:17,147 - INFO - YOLO Default : visualize           : False  来源: [YAML]
+2025-06-30 14:39:17,147 - INFO - YOLO Default : verbose             : True  来源: [YAML]
+2025-06-30 14:39:17,147 - INFO - YOLO Default : beautify            : True  来源: [命令行]
+2025-06-30 14:39:17,147 - INFO - YOLO Default : use-chinese         : True  来源: [YAML]
+2025-06-30 14:39:17,147 - INFO - YOLO Default : font_size           : 26  来源: [命令行]
+2025-06-30 14:39:17,148 - INFO - YOLO Default : label_padding_x     : 10  来源: [命令行]
+2025-06-30 14:39:17,148 - INFO - YOLO Default : label_padding_y     : 10  来源: [命令行]
+2025-06-30 14:39:17,148 - INFO - YOLO Default : radius              : 4  来源: [命令行]
+2025-06-30 14:39:17,148 - INFO - YOLO Default : weights             : D:\BTD\yoloservice\models\checkpoints1\train4_20250626-224651_yolo11m_best.pt  来源: [命令行]
+2025-06-30 14:39:17,148 - INFO - YOLO Default : display_size        : 720  来源: [命令行]
+2025-06-30 14:39:17,148 - INFO - YOLO Default : use_chinese_mapping : False  来源: [命令行]
+2025-06-30 14:39:17,148 - INFO - YOLO Default : ========= 设备信息 =========
+2025-06-30 14:39:18,920 - INFO - YOLO Default : ========================================
+2025-06-30 14:39:18,921 - INFO - YOLO Default : 设备信息概览
+2025-06-30 14:39:18,921 - INFO - YOLO Default : ========================================
+2025-06-30 14:39:18,921 - INFO - YOLO Default : 基本设备信息:
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     操作系统            : Windows 11
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     Python版本          : 3.12.0
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     Python解释器路径    : C:\anaconda\envs\btd\python.exe
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     Python虚拟环境      : btd
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     当前检测时间        : 2025-06-30 14:39:17
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     主机名              : DELL-lyw
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     当前用户            : 13095
+2025-06-30 14:39:18,921 - INFO - YOLO Default : CPU信息:
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     CPU型号             : 12th Gen Intel(R) Core(TM) i5-12500H
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     CPU物理核心数       : 12
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     CPU逻辑核心数       : 16
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     CPU使用率           : 11.4%
+2025-06-30 14:39:18,921 - INFO - YOLO Default : GPU信息:
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     CUDA是否可用        : True
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     CUDA版本            : 12.6
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     NVIDIA驱动程序版本  : 576.80
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     可用的GPU数量       : 1
+2025-06-30 14:39:18,921 - INFO - YOLO Default : 内存信息:
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     总内存              : 15.69 GB
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     已使用内存          : 11.44 GB
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     剩余内存            : 4.26 GB
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     内存使用率          : 72.9%
+2025-06-30 14:39:18,921 - INFO - YOLO Default : 环境信息:
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     PyTorch版本         : 2.7.1+cu126
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     cuDNN版本           : 90701
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     Ultralytics_Version : 8.3.152
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     ONNX版本            : 1.18.0
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     Numpy版本           : 2.1.2
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     OpenCV版本          : 4.11.0.86
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     Pillow版本          : 11.0.0
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     Torchvision版本     : 0.22.1+cu126
+2025-06-30 14:39:18,921 - INFO - YOLO Default : 磁盘信息:
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     总空间              : 100.00 GB
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     已用空间            : 87.53 GB
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     剩余空间            : 12.47 GB
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     使用率              : 87.5%
+2025-06-30 14:39:18,921 - INFO - YOLO Default : GPU详细列表:
+2025-06-30 14:39:18,921 - INFO - YOLO Default :   --- GPU 0 详情 ---
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     GPU_0_型号               : NVIDIA GeForce RTX 3050 Ti Laptop GPU
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     GPU_0_总显存             : 4.00 GB
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     GPU_0_算力               : 8.6
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     GPU_0_多处理器数量       : 20
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     GPU_0_PyTorch_已分配显存 : 0.00 MB
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     GPU_0_PyTorch_已缓存显存 : 0.00 MB
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     GPU_0_利用率             : GPU:0% / Mem:0%
+2025-06-30 14:39:18,921 - INFO - YOLO Default :     GPU_0_实时使用显存       : 134.00 MB
+2025-06-30 14:39:18,921 - INFO - YOLO Default : ========================================
+2025-06-30 14:39:18,921 - INFO - YOLO Default : ========= 数据集信息 =========
+2025-06-30 14:39:18,926 - INFO - YOLO Default : 此次使用的数据信息为: D:\BTD\yoloservice\data\test\images
+2025-06-30 14:39:18,926 - INFO - YOLO Default : 加载推理模型: D:\BTD\yoloservice\models\checkpoints1\train4_20250626-224651_yolo11m_best.pt
+2025-06-30 14:39:23,219 - INFO - YOLO Default : 推理完成，结果已保存至: D:\BTD\yoloservice\runs\infer\exp2
+2025-06-30 14:39:23,219 - INFO - YOLO Default : ======================================推理结束======================================

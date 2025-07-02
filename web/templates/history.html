@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>历史检测记录 - 智能医疗影像平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #eaf6fb 0%, #f5fafd 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', 'Roboto', 'Arial', 'LXGWWenKai-Bold', sans-serif;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0; left: 0; bottom: 0;
+            width: 220px;
+            background: #fff;
+            border-right: 1.5px solid #e3f2fd;
+            box-shadow: 2px 0 18px #b3e0fc22;
+            z-index: 100;
+            padding-top: 32px;
+        }
+        .sidebar .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #ffb300;
+            letter-spacing: 1.5px;
+            margin-bottom: 36px;
+            text-align: center;
+        }
+        .sidebar .nav-link {
+            color: #1976d2;
+            font-weight: 700;
+            font-size: 1.13rem;
+            border-radius: 8px;
+            margin: 6px 12px;
+            transition: background 0.15s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sidebar .nav-link img {
+            width: 22px; height: 22px;
+        }
+        .sidebar .nav-link.active, .sidebar .nav-link:hover {
+            background: linear-gradient(90deg, #e3f2fd 0%, #b3e0fc33 100%);
+            color: #1565c0;
+        }
+        .main-content {
+            margin-left: 240px;
+            padding: 36px 24px 24px 24px;
+        }
+        .card-record {
+            border-radius: 16px;
+            box-shadow: 0 2px 18px #b3e0fc22;
+            border: 1.5px solid #e3f2fd;
+            margin-bottom: 24px;
+            background: #fff;
+            transition: box-shadow 0.2s;
+        }
+        .card-record:hover {
+            box-shadow: 0 6px 32px #b3e0fc44;
+        }
+        .record-header {
+            font-size: 1.18rem;
+            font-weight: 800;
+            color: #1976d2;
+            margin-bottom: 8px;
+        }
+        .record-meta {
+            color: #1976d2;
+            font-size: 1.01rem;
+            margin-bottom: 6px;
+        }
+        .record-section-title {
+            color: #ff9800;
+            font-weight: 700;
+            margin-top: 10px;
+            margin-bottom: 4px;
+        }
+        .record-actions {
+            margin-top: 10px;
+        }
+        .btn-pdf {
+            background: linear-gradient(90deg, #1976d2 0%, #64b5f6 100%);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 8px;
+            border: none;
+            padding: 6px 18px;
+            font-size: 1.05rem;
+            box-shadow: 0 0 8px #b3e0fc33;
+        }
+        .btn-pdf:hover {
+            background: linear-gradient(90deg, #64b5f6 0%, #1976d2 100%);
+            color: #fff;
+        }
+        @media (max-width: 900px) {
+            .sidebar { display: none; }
+            .main-content { margin-left: 0; padding: 16px 4px; }
+        }
+    </style>
+</head>
+<body>
+<div class="sidebar d-flex flex-column align-items-center">
+    <div class="logo mb-4"><img src="{{ url_for('static', filename='icons/开始.png') }}" style="width:32px;height:32px;border-radius:8px;vertical-align:-8px;"> <span>yolo医疗肿瘤检测平台</span></div>
+    <nav class="nav flex-column w-100">
+        <a class="nav-link" href="/"><img src="{{ url_for('static', filename='icons/开始.png') }}"> 首页</a>
+        <a class="nav-link" href="/detect"><img src="{{ url_for('static', filename='icons/摄像头_camera-one.png') }}"> 肿瘤检测</a>
+        <a class="nav-link active" href="/history"><img src="{{ url_for('static', filename='icons/icon-date.png') }}"> 历史记录</a>
+    </nav>
+    <div style="position:absolute;left:0;bottom:0;width:220px;opacity:0.92;z-index:10;">
+        <img src="{{ url_for('static', filename='icons/3321.png') }}" style="width:100%;border-radius:18px 18px 0 0;box-shadow:0 2px 12px #b3e0fc33;">
+    </div>
+</div>
+<div class="main-content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-primary"><img src="{{ url_for('static', filename='icons/icon-date.png') }}" style="width:28px;vertical-align:-6px;"> 历史检测记录</h2>
+        <a href="/detect" class="btn btn-outline-primary"><img src="{{ url_for('static', filename='icons/摄像头_camera-one.png') }}" style="width:18px;vertical-align:-3px;"> 去肿瘤检测</a>
+    </div>
+    
+    <!-- 搜索表单 -->
+    <div class="card mb-4" style="border:1px solid #e3f2fd;border-radius:12px;background:linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);">
+        <div class="card-body">
+            <h5 class="card-title text-primary mb-3"><img src="{{ url_for('static', filename='icons/开始.png') }}" style="width:20px;vertical-align:-3px;"> 搜索条件</h5>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label">患者姓名</label>
+                    <input type="text" class="form-control" id="search-name" placeholder="请输入姓名">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">性别</label>
+                    <select class="form-select" id="search-gender">
+                        <option value="">全部</option>
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">年龄</label>
+                    <input type="text" class="form-control" id="search-age" placeholder="请输入年龄">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">检测日期</label>
+                    <input type="date" class="form-control" id="search-date">
+                </div>
+                <div class="col-md-2 d-flex align-items-end">
+                    <button class="btn btn-primary w-100" id="search-btn" style="background:linear-gradient(90deg, #1976d2 0%, #64b5f6 100%);border:none;">
+                        <img src="{{ url_for('static', filename='icons/开始.png') }}" style="width:16px;vertical-align:-2px;"> 搜索
+                    </button>
+                </div>
+            </div>
+            <div class="mt-2">
+                <button class="btn btn-outline-secondary btn-sm" id="reset-btn">重置条件</button>
+                <span class="text-muted ms-3" id="search-result-info">共 {{ records|length }} 条记录</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 记录列表容器 -->
+    <div id="records-container">
+    {% if records and records|length > 0 %}
+        {% for r in records %}
+        <div class="card card-record p-4">
+            <div class="row">
+                <div class="col-md-8 col-12">
+                    <div class="record-header">检测单号：{{ r.record_id }}</div>
+                    <div class="record-meta">检测时间：{{ r.time }} | 患者：{{ r.patient_name }} | 性别：{{ r.patient_gender }} | 年龄：{{ r.patient_age }} | 检查号：{{ r.patient_id }}</div>
+                    <div class="record-section-title">检测结果：</div>
+                    <ul class="mb-2">
+                        {% for d in r.detections %}
+                        <li>{{ d }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div class="record-section-title">AI诊断结论：</div>
+                    <div class="mb-2">{{ r.ai_diagnosis }}</div>
+                    <div class="record-section-title">AI智能建议：</div>
+                    <div class="mb-2" id="ai-suggestion-{{ r.record_id }}" style="white-space:pre-line;">
+                        {{ r.ai_suggestion or '暂无AI分析，点击下方按钮进行分析' }}
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 d-flex flex-column align-items-center justify-content-center">
+                    {% if r.image_path %}
+                    <img src="{{ url_for('static', filename=r.image_path) }}" alt="检测图片" style="max-width:180px;max-height:180px;border-radius:12px;border:2px solid #e3f2fd;box-shadow:0 2px 12px #b3e0fc22;">
+                    {% endif %}
+                    <div class="record-actions mt-3">
+                        {% if not r.ai_suggestion %}
+                        <button class="btn btn-warning btn-ai-analyze mb-2" data-record-id="{{ r.record_id }}" data-detections="{{ r.detections|join(',') }}">
+                            <img src="{{ url_for('static', filename='icons/icon-unknown.png') }}" style="width:16px;vertical-align:-2px;"> AI智能分析
+                        </button>
+                        {% endif %}
+                        <a href="/report/pdf/{{ r.record_id }}" class="btn btn-pdf" target="_blank"><img src="{{ url_for('static', filename='icons/icon-format.png') }}" style="width:18px;vertical-align:-3px;"> 导出PDF报告</a>
+                        <button class="btn btn-danger btn-del-record ms-2" data-id="{{ r.record_id }}"><img src="{{ url_for('static', filename='icons/icon-fail.png') }}" style="width:16px;vertical-align:-2px;"> 删除</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-info">暂无历史检测记录。</div>
+    {% endif %}
+    </div> <!-- 记录容器结束 -->
+</div>
+<script>
+document.querySelectorAll('.btn-del-record').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        const recordId = this.getAttribute('data-id');
+        if(confirm('确定要删除该检测记录吗？')) {
+            fetch(`/history/delete/${recordId}`, {
+                method: 'POST',
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.success) {
+                    location.reload();
+                } else {
+                    alert('删除失败：' + (data.msg || '未知错误'));
+                }
+            })
+            .catch(() => alert('网络错误，删除失败'));
+        }
+    });
+});
+
+// AI分析功能
+document.querySelectorAll('.btn-ai-analyze').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        const recordId = this.getAttribute('data-record-id');
+        const detections = this.getAttribute('data-detections').split(',');
+        const suggestionDiv = document.getElementById('ai-suggestion-' + recordId);
+        
+        btn.disabled = true;
+        btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> AI分析中...';
+        
+        fetch('/ai_analyze', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                detections: detections,
+                record_id: recordId
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            suggestionDiv.innerHTML = data.result || '分析失败';
+            btn.style.display = 'none'; // 隐藏分析按钮
+        })
+        .catch(() => {
+            suggestionDiv.innerHTML = 'AI分析失败，请重试';
+            btn.disabled = false;
+            btn.innerHTML = '<img src="/static/icons/icon-unknown.png" style="width:16px;vertical-align:-2px;"> AI智能分析';
+        });
+    });
+});
+
+// 搜索功能
+function performSearch() {
+    const searchData = {
+        name: document.getElementById('search-name').value,
+        gender: document.getElementById('search-gender').value,
+        age: document.getElementById('search-age').value,
+        date: document.getElementById('search-date').value
+    };
+    
+    const searchBtn = document.getElementById('search-btn');
+    const originalText = searchBtn.innerHTML;
+    searchBtn.disabled = true;
+    searchBtn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> 搜索中...';
+    
+    fetch('/history/search', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(searchData)
+    })
+    .then(res => res.json())
+    .then(data => {
+        updateRecordsList(data.records);
+        document.getElementById('search-result-info').textContent = `共 ${data.total} 条记录`;
+        searchBtn.disabled = false;
+        searchBtn.innerHTML = originalText;
+    })
+    .catch(() => {
+        alert('搜索失败，请重试');
+        searchBtn.disabled = false;
+        searchBtn.innerHTML = originalText;
+    });
+}
+
+function updateRecordsList(records) {
+    const container = document.getElementById('records-container');
+    if (records.length === 0) {
+        container.innerHTML = '<div class="alert alert-info">未找到符合条件的记录。</div>';
+        return;
+    }
+    
+    let html = '';
+    records.forEach(r => {
+        html += `
+        <div class="card card-record p-4">
+            <div class="row">
+                <div class="col-md-8 col-12">
+                    <div class="record-header">检测单号：${r.record_id}</div>
+                    <div class="record-meta">检测时间：${r.time} | 患者：${r.patient_name} | 性别：${r.patient_gender} | 年龄：${r.patient_age} | 检查号：${r.patient_id}</div>
+                    <div class="record-section-title">检测结果：</div>
+                    <ul class="mb-2">
+                        ${r.detections.map(d => `<li>${d}</li>`).join('')}
+                    </ul>
+                    <div class="record-section-title">AI诊断结论：</div>
+                    <div class="mb-2">${r.ai_diagnosis}</div>
+                    <div class="record-section-title">AI智能建议：</div>
+                    <div class="mb-2" id="ai-suggestion-${r.record_id}" style="white-space:pre-line;">
+                        ${r.ai_suggestion || '暂无AI分析，点击下方按钮进行分析'}
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 d-flex flex-column align-items-center justify-content-center">
+                    ${r.image_path ? `<img src="/static/${r.image_path}" alt="检测图片" style="max-width:180px;max-height:180px;border-radius:12px;border:2px solid #e3f2fd;box-shadow:0 2px 12px #b3e0fc22;">` : ''}
+                    <div class="record-actions mt-3">
+                        ${!r.ai_suggestion ? `<button class="btn btn-warning btn-ai-analyze mb-2" data-record-id="${r.record_id}" data-detections="${r.detections.join(',')}">
+                            <img src="/static/icons/icon-unknown.png" style="width:16px;vertical-align:-2px;"> AI智能分析
+                        </button>` : ''}
+                        <a href="/report/pdf/${r.record_id}" class="btn btn-pdf" target="_blank"><img src="/static/icons/icon-format.png" style="width:18px;vertical-align:-3px;"> 导出PDF报告</a>
+                        <button class="btn btn-danger btn-del-record ms-2" data-id="${r.record_id}"><img src="/static/icons/icon-fail.png" style="width:16px;vertical-align:-2px;"> 删除</button>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+    });
+    
+    container.innerHTML = html;
+    
+    // 重新绑定事件
+    bindEvents();
+}
+
+function bindEvents() {
+    // 删除按钮事件
+    document.querySelectorAll('.btn-del-record').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const recordId = this.getAttribute('data-id');
+            if(confirm('确定要删除该检测记录吗？')) {
+                fetch(`/history/delete/${recordId}`, {
+                    method: 'POST',
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.success) {
+                        location.reload();
+                    } else {
+                        alert('删除失败：' + (data.msg || '未知错误'));
+                    }
+                })
+                .catch(() => alert('网络错误，删除失败'));
+            }
+        });
+    });
+    
+    // AI分析按钮事件
+    document.querySelectorAll('.btn-ai-analyze').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            const recordId = this.getAttribute('data-record-id');
+            const detections = this.getAttribute('data-detections').split(',');
+            const suggestionDiv = document.getElementById('ai-suggestion-' + recordId);
+            
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> AI分析中...';
+            
+            fetch('/ai_analyze', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    detections: detections,
+                    record_id: recordId
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                suggestionDiv.innerHTML = data.result || '分析失败';
+                btn.style.display = 'none';
+            })
+            .catch(() => {
+                suggestionDiv.innerHTML = 'AI分析失败，请重试';
+                btn.disabled = false;
+                btn.innerHTML = '<img src="/static/icons/icon-unknown.png" style="width:16px;vertical-align:-2px;"> AI智能分析';
+            });
+        });
+    });
+}
+
+// 搜索按钮事件
+document.getElementById('search-btn').addEventListener('click', performSearch);
+
+// 重置按钮事件
+document.getElementById('reset-btn').addEventListener('click', function() {
+    document.getElementById('search-name').value = '';
+    document.getElementById('search-gender').value = '';
+    document.getElementById('search-age').value = '';
+    document.getElementById('search-date').value = '';
+    location.reload(); // 重新加载页面显示全部记录
+});
+
+// 回车键搜索
+document.querySelectorAll('#search-name, #search-age').forEach(input => {
+    input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<div class="container position-relative" style="margin:56px auto 0 auto; float:none; max-width:1200px;">
+    <div class="neon-corner tl"></div>
+    <div class="neon-corner tr"></div>
+    <div class="neon-corner bl"></div>
+    <div class="neon-corner br"></div>
+    <div class="row g-4">
+        <!-- 左侧 检测表单 -->
+        <div class="col-md-6 col-12">
+            <div class="title"><i class="bi bi-cpu"></i> 肿瘤检测演示</div>
+            <div class="neon-bar"></div>
+            <div class="desc">上传图片，体验AI肿瘤检测。</div>
+            <form method="post" enctype="multipart/form-data" class="mb-4">
+                <div class="row g-2 mb-2">
+                    <div class="col-6">
+                        <label for="patient_name">患者姓名：</label>
+                        <input class="form-control" type="text" name="patient_name" id="patient_name" required>
+                    </div>
+                    <div class="col-3">
+                        <label for="patient_gender">性别：</label>
+                        <select class="form-select" name="patient_gender" id="patient_gender" required>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+                    </div>
+                    <div class="col-3">
+                        <label for="patient_age">年龄：</label>
+                        <input class="form-control" type="number" name="patient_age" id="patient_age" min="0" max="120" required>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <label for="patient_id">检查号：</label>
+                    <input class="form-control" type="text" name="patient_id" id="patient_id">
+                </div>
+                <div class="model-select row g-2 align-items-center">
+                    <div class="col-6">
+                        <label for="model_folder">模型文件夹：</label>
+                        <select class="form-select" name="model_folder" id="model_folder">
+                            {% for folder in model_folders %}
+                                <option value="{{ folder }}" {% if folder == selected_folder %}selected{% endif %}>{{ folder }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="model">模型文件：</label>
+                        <select class="form-select" name="model" id="model">
+                            <!-- 选项由JS动态填充 -->
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3 mt-2">
+                    <label for="custom_model" style="color:#b2eaff;font-weight:600;">或上传自定义.pt模型：</label>
+                    <input class="form-control" type="file" name="custom_model" id="custom_model" accept=".pt">
+                    <div style="color:#00eaff99;font-size:0.95em;">优先使用上传的模型进行检测</div>
+                </div>
+                <div class="mb-3">
+                    <input class="form-control custom-file-input" type="file" name="image" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100"><i class="bi bi-upload"></i> 上传并检测</button>
+            </form>
+            <!-- 检测结果展示区 -->
+            {% if prediction %}
+            <div class="card shadow-sm border-0" style="background:rgba(16,28,44,0.95);border-radius:14px;">
+                <div class="card-body p-2 text-center">
+                    <img src="{{ url_for('static', filename=image_path) }}" class="result-img" alt="检测结果">
+                </div>
+            </div>
+            <div class="detections-list mb-2 mt-3">
+                <b><i class="bi bi-list-check"></i> 检测结果：</b>
+                <ul id="detections-list-ul">
+                    {% for d in detections %}
+                        <li>{{ d }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="mb-3 mt-2 text-center">
+                <a href="/report/pdf/{{ record_id }}" class="btn btn-success" target="_blank">
+                    <i class="bi bi-file-earmark-pdf"></i> 导出PDF报告
+                </a>
+                <div style="color:#1976d2;font-size:0.98em;margin-top:6px;">
+                    检测单号：{{ record_id }}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        <!-- 右侧 大模型检测模块 -->
+        <div class="col-md-6 col-12">
+            <div class="title"><i class="bi bi-stars"></i> 大模型检测</div>
+            <div class="neon-bar"></div>
+            <div class="desc">AI专家分析与诊断</div>
+            <div class="card shadow-sm border-0 mb-3" style="background:rgba(16,28,44,0.95);border-radius:14px;">
+                <div class="card-body p-3">
+                    <button id="ai-analyze-btn" class="btn btn-primary w-100 mb-2" type="button" style="font-size:1.08em;"><i class="bi bi-stars"></i> AI智能分析</button>
+                    <div id="ai-analyze-result">
+                        {% if deepseek_diagnosis %}
+                        <div class="ai-diagnosis-box alert alert-warning text-center mt-3">
+                            <i class="bi bi-lightbulb"></i> 大模型智能诊断：{{ deepseek_diagnosis }}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var modelDict = JSON.parse('{{ model_dict|tojson|safe }}');
+        var folderSelect = document.getElementById('model_folder');
+        var modelSelect = document.getElementById('model');
+        function updateModelOptions() {
+            var selectedFolder = folderSelect.value;
+            var models = modelDict[selectedFolder] || [];
+            modelSelect.innerHTML = '';
+            for (var i = 0; i < models.length; i++) {
+                var opt = document.createElement('option');
+                opt.value = models[i];
+                opt.text = models[i];
+                modelSelect.appendChild(opt);
+            }
+            // 设置选中项
+            var selectedModel = '{{ selected_model }}';
+            if(selectedModel) {
+                for(var i=0;i<modelSelect.options.length;i++){
+                    if(modelSelect.options[i].value === selectedModel){
+                        modelSelect.options[i].selected = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if(folderSelect) folderSelect.addEventListener('change', updateModelOptions);
+        updateModelOptions();
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('ai-analyze-btn');
+        var resultDiv = document.getElementById('ai-analyze-result');
+        btn && (btn.onclick = function() {
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> AI分析中...';
+            resultDiv.innerHTML = '';
+            var recordId = '{{ record_id }}' || '';
+            fetch('/ai_analyze', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    detections: Array.from(document.querySelectorAll('#detections-list-ul li')).map(li => li.innerText),
+                    record_id: recordId
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                resultDiv.innerHTML = '<div class="ai-diagnosis-box alert alert-warning text-center mt-3"><i class="bi bi-lightbulb"></i> 大模型智能诊断：' + (data.result || '无结果') + '</div>';
+                btn.disabled = false;
+                btn.innerHTML = '<i class="bi bi-stars"></i> 重新AI分析';
+            })
+            .catch(function(){
+                resultDiv.innerHTML = '<div class="alert alert-danger mt-3">AI分析失败，请重试</div>';
+                btn.disabled = false;
+                btn.innerHTML = '<i class="bi bi-stars"></i> AI智能分析';
+            });
+        });
+    });
+    </script>
+</div>

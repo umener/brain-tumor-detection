@@ -1,0 +1,18 @@
+2025-06-26 11:22:31,813 - INFO - YOLO Validation : 日志记录器已启动，日志文件保存在: D:\BTD\yoloservice\logs\dataset_verify\dataset_verify__20250626-112231.log
+2025-06-26 11:22:31,813 - INFO - YOLO Validation : 日志记录器的根目录: D:\BTD\yoloservice\logs
+2025-06-26 11:22:31,813 - INFO - YOLO Validation : 日志记录器的名称: YOLO Validation
+2025-06-26 11:22:31,813 - INFO - YOLO Validation : 日志记录器的类型: dataset_verify
+2025-06-26 11:22:31,813 - INFO - YOLO Validation : 日志记录器的级别: INFO
+2025-06-26 11:22:31,813 - INFO - YOLO Validation : =========================日志记录器初始化成功=========================
+2025-06-26 11:22:31,823 - INFO - YOLO Validation : 开始验证数据集，模式为: SAMPLE, 任务类型: detection, 删除非法数据: 否
+2025-06-26 11:22:31,823 - INFO - YOLO Validation : 验证data.yaml文件配置,配置文件路径为：D:\BTD\yoloservice\configs\data.yaml
+2025-06-26 11:22:31,823 - INFO - YOLO Validation : 当前验证任务类型为: DETECTION
+2025-06-26 11:22:31,823 - ERROR - YOLO Validation : data.yaml文件不存在: D:\BTD\yoloservice\configs\data.yaml，请检查配置文件路径是否正确
+2025-06-26 11:22:31,825 - ERROR - YOLO Validation : 基础数据验证未通过，请查看详细日志
+2025-06-26 11:22:31,825 - ERROR - YOLO Validation : 检测到 0 个无效数据样本，详细信息如下：
+2025-06-26 11:22:31,825 - WARNING - YOLO Validation : 检测到了无效数据，但未启用删除功能，文件将被保留
+2025-06-26 11:22:31,826 - INFO - YOLO Validation : 开始执行分割唯一性验证
+2025-06-26 11:22:31,826 - INFO - YOLO Validation : 开始验证数据集划分的唯一性（train, val, test 之间无重复图像）。
+2025-06-26 11:22:31,826 - ERROR - YOLO Validation : data.yaml 文件不存在: D:\BTD\yoloservice\configs\data.yaml，无法进行分割唯一性验证。
+2025-06-26 11:22:31,826 - ERROR - YOLO Validation : 分割唯一性验证未通过，存在重复文件，请查看详细日志
+2025-06-26 11:22:31,826 - ERROR - YOLO Validation : 数据集验证未通过，请检查详细日志并修正问题

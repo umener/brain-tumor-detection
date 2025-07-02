@@ -1,0 +1,101 @@
+[
+  {
+    "record_id": "202507021604404535",
+    "time": "2025-07-02 16:04:40",
+    "patient_name": "李四",
+    "patient_gender": "男",
+    "patient_age": "55",
+    "patient_id": "5",
+    "image_path": "detections/20250702160436_P_317_jpg.rf.f1a9d83f3ac402975556d2901e05a1e5.jpg",
+    "detections": [
+      "pituitary_tumor: 88.4%"
+    ],
+    "ai_diagnosis": "检测到1个pituitary_tumor。",
+    "ai_suggestion": "医学诊断结论  \n根据影像学检查结果，垂体腺瘤可能性极高（88.4%），表现为鞍区占位性病变。需结合临床症状（如内分泌紊乱、视力视野障碍等）及激素水平检测进一步明确分型（如无功能性腺瘤、泌乳素瘤、生长激素瘤等）。\n医学建议  \n进一步检查：  \n内分泌评估：检测垂体激素全套（包括促甲状腺激素、生长激素、泌乳素、性腺激素、促肾上腺皮质激素等）。  \n神经眼科检查：评估是否存在视交叉压迫（如视野检查、眼底检查）。  \n增强MRI扫描：明确肿瘤大小、边界、是否侵犯邻近结构及有无海绵窦侵犯。  \n治疗方案选择：  \n功能性腺瘤（如泌乳素瘤）：首选药物治疗（如多巴胺激动剂卡麦角林）；若药物不耐受或无效，可考虑手术。  \n无功能性/大腺瘤/侵袭性腺瘤：优先选择经蝶窦微创手术切除；术后根据残留或复发情况，评估是否需要放疗。  \n观察随访：若肿瘤较小（<5mm）、无症状且无功能，可密切随访，每612个月复查MRI。  \n随访与管理：  \n定期监测激素水平、视功能及肿瘤变化。  \n内分泌科及神经外科多学科联合随访，动态评估治疗反应及并发症。  \n提示：垂体瘤可能引发严重并发症（如垂体卒中、失明），需尽早专科会诊制定个体化方案。"
+  },
+  {
+    "record_id": "202507021556194555",
+    "time": "2025-07-02 15:56:19",
+    "patient_name": "王无",
+    "patient_gender": "男",
+    "patient_age": "65",
+    "patient_id": "123",
+    "image_path": "detections/20250702155616_M_44_jpg.rf.fc2e83a57814df1c659e557cfb2844e2.jpg",
+    "detections": [
+      "meningioma_tumor: 94.05%"
+    ],
+    "ai_diagnosis": "检测到1个meningioma_tumor。",
+    "ai_suggestion": "测试AI建议内容"
+  },
+  {
+    "record_id": "202507021553272186",
+    "time": "2025-07-02 15:53:27",
+    "patient_name": "李四",
+    "patient_gender": "男",
+    "patient_age": "22",
+    "patient_id": "123",
+    "image_path": "detections/20250702155326_G_316_jpg.rf.7359cfbae3847965f975114baff1ae4d.jpg",
+    "detections": [
+      "glioma_tumor: 89.78%",
+      "glioma_tumor: 58.23%"
+    ],
+    "ai_diagnosis": "检测到2个glioma_tumor。",
+    "ai_suggestion": ""
+  },
+  {
+    "record_id": "202507021548012604",
+    "time": "2025-07-02 15:48:01",
+    "patient_name": "张三",
+    "patient_gender": "男",
+    "patient_age": "44",
+    "patient_id": "123",
+    "image_path": "detections/20250702154757_P_489_jpg.rf.47dd02a71c4ed5e19907ec286b39e47c.jpg",
+    "detections": [
+      "pituitary_tumor: 92.18%"
+    ],
+    "ai_diagnosis": "检测到1个pituitary_tumor。",
+    "ai_suggestion": ""
+  },
+  {
+    "record_id": "202507021542591053",
+    "time": "2025-07-02 15:42:59",
+    "patient_name": "小张",
+    "patient_gender": "男",
+    "patient_age": "45",
+    "patient_id": "123",
+    "image_path": "detections/20250702154255_P_489_jpg.rf.47dd02a71c4ed5e19907ec286b39e47c.jpg",
+    "detections": [
+      "pituitary_tumor: 92.18%"
+    ],
+    "ai_diagnosis": "检测到1个pituitary_tumor。",
+    "ai_suggestion": ""
+  },
+  {
+    "record_id": "202507021532351577",
+    "time": "2025-07-02 15:32:35",
+    "patient_name": "小",
+    "patient_gender": "男",
+    "patient_age": "99",
+    "patient_id": "123",
+    "image_path": "detections/20250702153232_M_34_jpg.rf.93695e62dc2cf17f0058a7b45f87a2bc.jpg",
+    "detections": [
+      "meningioma_tumor: 93.01%"
+    ],
+    "ai_diagnosis": "检测到1个meningioma_tumor。",
+    "ai_suggestion": ""
+  },
+  {
+    "record_id": "202507021527514607",
+    "time": "2025-07-02 15:27:51",
+    "patient_name": "小",
+    "patient_gender": "男",
+    "patient_age": "99",
+    "patient_id": "123",
+    "image_path": "detections/20250702152748_M_34_jpg.rf.93695e62dc2cf17f0058a7b45f87a2bc.jpg",
+    "detections": [
+      "meningioma_tumor: 93.01%"
+    ],
+    "ai_diagnosis": "检测到1个meningioma_tumor。",
+    "ai_suggestion": "医学诊断结论：  \n根据影像学检测结果，诊断为 脑膜瘤（Meningioma），其影像学特征显示该肿瘤的诊断概率高达 93.01%。脑膜瘤是起源于脑膜（蛛网膜帽细胞）的常见原发性颅内肿瘤，绝大多数为良性（WHO I级），少数为间变型或恶性（IIIII级）。需结合病灶具体位置、大小及临床症状进一步评估。\n医学建议：  \n确诊建议：  \n立即转诊至 神经外科 进行详细临床评估，并完善 增强MRI（T1加权 + 病灶薄层扫描） 或 头颅CT平扫+增强，明确肿瘤的大小、位置（如蝶骨嵴、大脑凸面、镰旁等）、形态学特征（如是否伴有强化、硬膜尾征、骨质改变等），以最终确诊及分型。  \n若影像学高度怀疑脑膜瘤且拟手术切除，术前需进行 全脑脑膜瘤相关的遗传学检测（如NF2基因突变等），辅助判断预后及治疗策略。\n治疗建议：  \n病灶若具有明确手术指征（如肿瘤直径＞2cm、占位效应、癫痫、局灶神经功能缺损或生长趋势明确），建议 显微外科手术全切除（目标为完全切除，减少复发），术后病理分级将指导后续治疗（如WHO IIIII级需辅助放疗）。  \n病灶若＜2cm、无症状且无增长趋势，可考虑 定期影像学随访（如每612个月一次MRI），动态监测变化。  \n若存在手术风险（邻近功能区或侵袭颅底），或患者拒绝手术，可评估 放疗适应证（如立体定向放射外科或常规放疗）。  \n其他注意事项：  \n立即进行 神经系统查体（包括视力、视野、颅神经功能及运动/感觉功能评估），排查已发生的神经功能损伤。  \n若肿瘤位于静脉窦、脑干等复杂位置或影像学提示不典型特征（如边界不清、明显水肿），需行 病理活检 以排除恶性转化可能。  \n监测症状变化：如头痛、恶心呕吐、认知障碍加重等，需及时复诊。  \n预后说明：  \n良性脑膜瘤全切后10年无进展生存率＞90%，但侵袭性、恶性或未完全切除的病例需长期随访。建议与神经外科、放疗科及肿瘤科共同制定个体化诊疗计划。  \n依据：  \nWHO中枢神经系统肿瘤分类（第五版）及NCCN指南（神经肿瘤）：脑膜瘤的影像学诊断需结合典型特征（如邻近骨质增生、硬膜尾征）及增强表现；治疗决策依赖肿瘤大小、位置、生物学行为及患者症状。  \nAANS（美国神经外科医生协会）建议：无症状小肿瘤可观察，但需警惕生长风险。  \n（注：本结论需结合临床资料及患者意愿最终由多学科团队决定。）"
+  }
+]

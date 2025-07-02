@@ -1,0 +1,5 @@
+2025-06-24 13:32:08,375 - INFO - YOLO Initialize Project : 日志记录器已启动，日志文件保存在: D:\BTD\yoloservice\logs\init_project\init_project__20250624-133208.log
+2025-06-24 13:32:08,375 - INFO - YOLO Initialize Project : 日志记录器的名称: YOLO Initialize Project
+2025-06-24 13:32:08,375 - INFO - YOLO Initialize Project : 日志记录器的类型: init_project
+2025-06-24 13:32:08,375 - INFO - YOLO Initialize Project : 日志记录器的级别: INFO
+2025-06-24 13:32:08,375 - INFO - YOLO Initialize Project : =========================日志记录器初始化成功=========================
