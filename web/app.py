@@ -52,8 +52,8 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['DETECT_FOLDER'] = DETECT_FOLDER
 
 # SiliconFlow（硅基流动）大模型API配置
-SILICONFLOW_API_URL = "https://api.siliconflow.cn/v1/chat/completions"  # 按文档要求
-SILICONFLOW_API_KEY = "sk-ebnhvhaihwhllkijnkcwvlabjtcotbkeziqhjesqqfqiiudt"  # 请替换为你的实际密钥
+SILICONFLOW_API_URL = "https://api.siliconflow.cn/v1/chat/completions"  # 硅基流动
+SILICONFLOW_API_KEY = "你的密钥"  # 请替换为你的实际密钥
 
 # 日志配置
 LOG_PATH = './web/logs/web.log'
